@@ -1,5 +1,10 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import './App.css';
+
+import Header from './components/Header';
+import Home from './components/Home';
+import NewThreads from './components/NewThreads';
 
 function App() {
   const [threads, setThreads] = useState([])
@@ -14,19 +19,15 @@ function App() {
 
   return (
     <>
-      <h1 className='top-title'>掲示板</h1>
-      <div className='thread-container'>
-        <h2>新着スレッド</h2>
-        <div className='thread-lists'>
-          {
-            threads.map(thread =>
-              <p className='thread-title' key={thread.id}>{thread.title}</p>
-            )
-          }
-        </div>
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/threads/new" element={<NewThreads />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

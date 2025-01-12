@@ -74,6 +74,32 @@ h2 {
   height: 100vh;
 }
 
+.post-box {
+  display: flex;
+  justify-content: space-between;
+}
+
 .thread-title-for-posts-page {
   width: 400px;
+}
+
+.form-area {
+  margin: 30px;
+}
+
+.post-form {
+  width: 250px;
+  height: 100px;
+  font-size: 20px;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.post-button {
+  background-color: #00BB00;
+  border: 1px solid #00BB00;
+  border-radius: 0.2rem;
+  width: 250px;
+  height: 50px;
+  margin: 20px;
 }

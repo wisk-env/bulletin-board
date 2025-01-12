@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [threads, setThreads] = useState([])
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/threads/${thread.id}`, { state: { title: thread.title } })
+  }
 
   useEffect(() => {
     fetch('https://railway.bulletinboard.techtrain.dev/threads?offset=0')
@@ -17,7 +23,11 @@ const Home = () => {
       <div className='thread-lists'>
         {
           threads.map(thread =>
-            <p className='thread-title' key={thread.id}>{thread.title}</p>
+            <>
+              <Link to={{pathname: `/threads/${thread.id}`,}} state={thread} className='thread-title'>
+                {thread.title}
+              </Link>
+            </>
           )
         }
       </div>

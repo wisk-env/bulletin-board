@@ -25,6 +25,7 @@
 .thread-container {
   background-color: #CCCCCC;
   padding: 50px;
+  height: 100vh;
 }
 
 h2 {
@@ -36,7 +37,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-.thread-title {
+.thread-title, .comments {
   background-color: #ffffff;
   width: 400px;
   height: 50px;
@@ -65,4 +66,14 @@ h2 {
   border: 1px solid #00BB00;
   border-radius: 0.2rem;
   padding: 5px 25px;
+}
+
+.posts-container {
+  background-color: #CCCCCC;
+  padding: 50px;
+  height: 100vh;
+}
+
+.thread-title-for-posts-page {
+  width: 400px;
 }

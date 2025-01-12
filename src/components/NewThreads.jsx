@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NewThreads = () => {
   const [threadTitle, setThreadTitle] = useState("");
+  const navigate = useNavigate();
 
   const handleThreadTitleChange = (e) => {
     setThreadTitle(e.target.value);
@@ -20,7 +21,7 @@ const NewThreads = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('Success:', data);
+        navigate('/')
       });
   }
 

@@ -24,7 +24,7 @@ const Home = () => {
         {
           threads.map(thread =>
             <>
-              <Link to={{pathname: `/threads/${thread.id}`,}} state={thread} className='thread-title'>
+              <Link to={{pathname: `/threads/${thread.id}`,}} state={thread} key={thread.id} className='thread-title'>
                 {thread.title}
               </Link>
             </>

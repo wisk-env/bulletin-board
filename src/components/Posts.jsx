@@ -34,7 +34,8 @@ const Posts = () => {
       fetch(`https://railway.bulletinboard.techtrain.dev/threads/${params.thread_id}/posts?offset=0`)
         .then(response => response.json())
         .then(data => {
-          setPosts(data)
+          setPosts(data);
+          setComments("");
         })
     });
   }
